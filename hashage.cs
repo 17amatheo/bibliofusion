@@ -34,7 +34,7 @@ string HashPasswordToB64(string password)
     catch (Exception ex)
     {
         Console.WriteLine($"Erreur lors du hash du mot de passe : {ex.Message}");
-        return null; // ou throw; si tu veux propager l'erreur
+        return null; 
     }
 }
 
