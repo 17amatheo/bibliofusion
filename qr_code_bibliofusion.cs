@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Security.Cryptography;
 
-// Clé secrète (à stocker ailleurs en prod)
+// Clé secrète (à stocker ailleurs dans un fichier config)
 string secretKey = "CLEE_VR@1M3NT_SECRETE";
 
 string Sign(string data, string secretKey)
