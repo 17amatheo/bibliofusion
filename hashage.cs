@@ -1,3 +1,5 @@
+//Project -> Manage NuGet Packages -> Browse -> Konscious.Security.Cryptography.Aragon2 (à télécharger)
+
 using Konscious.Security.Cryptography;
 using System.Text;
 
