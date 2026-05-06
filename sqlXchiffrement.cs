@@ -149,8 +149,8 @@ try
         string adresse = "123 Rue de la Sécurité";
         string codePostal = "75000";
         string email = "testch@mail.com";
-        string numMobile = "0678889122";
-        string numFixe = "0323574822";
+        string numMobile = "06123456";
+        string numFixe = "03654321";
 
         // Chiffrement (fonctions existantes : Chiffrer / Dechiffrer)
         string prenomchiffre = Chiffrer(prenom, cle);           //pas ch
