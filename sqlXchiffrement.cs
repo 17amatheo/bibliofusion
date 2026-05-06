@@ -168,8 +168,8 @@ try
               (@Nom, @Prenom, @DateNaissance, @Adresse, @CodePostal, @Email, @NumMobile, @NumFixe);",
             con))
         {
-            insertCmd.Parameters.AddWithValue("@Nom", nomchiffre);
-            insertCmd.Parameters.AddWithValue("@Prenom", prenomchiffre);
+            insertCmd.Parameters.AddWithValue("@Nom", nom);
+            insertCmd.Parameters.AddWithValue("@Prenom", prenom);
             insertCmd.Parameters.AddWithValue("@DateNaissance", dateNaissance);
             insertCmd.Parameters.AddWithValue("@Adresse", adressechiffre);
             insertCmd.Parameters.AddWithValue("@CodePostal", codePostal);
@@ -187,22 +187,22 @@ try
         using var con = new MySqlConnection(conString);
         con.Open();
 
-        // Lire uniquement le champ Prenom (chiffré) et le déchiffrer avant affichage
+        // Lire uniquement le champ Email (chiffré) et le déchiffrer avant affichage
         using (var selectCmd = new MySqlCommand(
-            "SELECT Num_Mobile FROM Adherents WHERE idAdherents=0;",
+            "SELECT Email FROM Adherents WHERE idAdherents=0;",
             con))
         using (var reader = selectCmd.ExecuteReader())
         {
-            var prenoms = new List<string>();
+            var mails = new List<string>();
 
             while (reader.Read())
             {
-                if (reader.IsDBNull(0)) { prenoms.Add("NULL"); continue; }
-                string prenomChiffreLu = reader.GetString(0);
-                Console.WriteLine("chiffre LU: " + prenomChiffreLu + "\n");
-                string prenomDechiffre = Dechiffrer(prenomChiffreLu, cle);
-                Console.WriteLine("DEchiffre LU: " + prenomDechiffre + "\n");
-                prenoms.Add(prenomDechiffre);
+                if (reader.IsDBNull(0)) { mails.Add("NULL"); continue; }
+                string mailChiffreLu = reader.GetString(0);
+                Console.WriteLine("chiffre LU: " + mailChiffreLe + "\n");
+                string mailDeChiffre = Dechiffrer(mailChiffreLe, cle);
+                Console.WriteLine("DEchiffre LU: " + mailDeChiffre + "\n");
+                mails.Add(mailDeChiffre);
             }
 
             
