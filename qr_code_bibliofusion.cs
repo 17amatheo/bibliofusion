@@ -27,7 +27,8 @@ string Sign(string data, string secretKey)
     catch (Exception ex)
     {
         Console.WriteLine($"Erreur lors de la signature : {ex.Message}");
-        return null; // ou throw;
+        throw;
+        // ou return null;
     }
 }
 
